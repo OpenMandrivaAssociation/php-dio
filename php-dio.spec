@@ -12,8 +12,6 @@ URL:		http://pecl.php.net/package/dio
 License:	PHP License
 Source0:	dio.tar.bz2
 BuildRequires:	php-devel >= 3:5.2.0
-Provides:	php5-dio
-Obsoletes:	php5-dio
 Epoch:		1
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
@@ -29,6 +27,15 @@ cases, the standard filesystem functions are more than adequate.
 %setup -q -n dio
 
 %build
+export CFLAGS="%{optflags}"
+export CXXFLAGS="%{optflags}"
+export FFLAGS="%{optflags}"
+
+%if %mdkversion >= 200710
+export CFLAGS="$CFLAGS -fstack-protector"
+export CXXFLAGS="$CXXFLAGS -fstack-protector"
+export FFLAGS="$FFLAGS -fstack-protector"
+%endif
 
 phpize
 %configure2_5x --with-libdir=%{_lib} \
@@ -57,5 +64,3 @@ EOF
 %doc package.xml
 %config(noreplace) %attr(0644,root,root) %{_sysconfdir}/php.d/%{inifile}
 %attr(0755,root,root) %{_libdir}/php/extensions/%{soname}
-
-
