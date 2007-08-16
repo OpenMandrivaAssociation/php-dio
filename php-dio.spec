@@ -6,7 +6,7 @@
 Summary:	Direct I/O extension module for PHP
 Name:		php-%{modname}
 Version:	0.1
-Release:	%mkrel 14
+Release:	%mkrel 15
 Group:		Development/PHP
 URL:		http://pecl.php.net/package/dio
 License:	PHP License
@@ -27,15 +27,7 @@ cases, the standard filesystem functions are more than adequate.
 %setup -q -n dio
 
 %build
-export CFLAGS="%{optflags}"
-export CXXFLAGS="%{optflags}"
-export FFLAGS="%{optflags}"
-
-%if %mdkversion >= 200710
-export CFLAGS="$CFLAGS -fstack-protector"
-export CXXFLAGS="$CXXFLAGS -fstack-protector"
-export FFLAGS="$FFLAGS -fstack-protector"
-%endif
+%serverbuild
 
 phpize
 %configure2_5x --with-libdir=%{_lib} \
