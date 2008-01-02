@@ -13,6 +13,7 @@ License:	PHP License
 Source0:	dio.tar.bz2
 BuildRequires:	php-devel >= 3:5.2.0
 Epoch:		1
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 PHP supports the direct io functions as described in the Posix Standard
