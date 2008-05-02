@@ -6,7 +6,7 @@
 Summary:	Direct I/O extension module for PHP
 Name:		php-%{modname}
 Version:	0.1
-Release:	%mkrel 18
+Release:	%mkrel 19
 Group:		Development/PHP
 URL:		http://pecl.php.net/package/dio
 License:	PHP License
