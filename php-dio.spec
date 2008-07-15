@@ -6,14 +6,14 @@
 Summary:	Direct I/O extension module for PHP
 Name:		php-%{modname}
 Version:	0.1
-Release:	%mkrel 19
+Release:	%mkrel 21
 Group:		Development/PHP
 URL:		http://pecl.php.net/package/dio
 License:	PHP License
 Source0:	dio.tar.bz2
 BuildRequires:	php-devel >= 3:5.2.0
 Epoch:		1
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 PHP supports the direct io functions as described in the Posix Standard
