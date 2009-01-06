@@ -5,14 +5,14 @@
 
 Summary:	Direct I/O extension module for PHP
 Name:		php-%{modname}
-Version:	0.1
-Release:	%mkrel 23
+Version:	0.0.2
+Release:	%mkrel 1
 Group:		Development/PHP
-URL:		http://pecl.php.net/package/dio
 License:	PHP License
-Source0:	dio.tar.bz2
+URL:		http://pecl.php.net/package/dio
+Source0:	http://pecl.php.net/get/dio-%{version}.tgz
 BuildRequires:	php-devel >= 3:5.2.0
-Epoch:		1
+Epoch:		2
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
@@ -24,7 +24,8 @@ cases, the standard filesystem functions are more than adequate.
 
 %prep
 
-%setup -q -n dio
+%setup -q -n dio-%{version}
+[ "../package*.xml" != "/" ] && mv ../package*.xml .
 
 %build
 %serverbuild
@@ -37,7 +38,7 @@ phpize
 mv modules/*.so .
 
 %install
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot} 
+rm -rf %{buildroot} 
 
 install -d %{buildroot}%{_libdir}/php/extensions
 install -d %{buildroot}%{_sysconfdir}/php.d
@@ -61,7 +62,7 @@ if [ "$1" = "0" ]; then
 fi
 
 %clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %files 
 %defattr(-,root,root)
