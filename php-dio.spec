@@ -5,12 +5,12 @@
 
 Summary:	Direct I/O extension module for PHP
 Name:		php-%{modname}
-Version:	0.0.4
-Release:	%mkrel 0.0.RC4.9
+Version:	0.0.5
+Release:	%mkrel 1
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/dio
-Source0:	http://pecl.php.net/get/dio-%{version}RC4.tgz
+Source0:	http://pecl.php.net/get/dio-%{version}.tgz
 BuildRequires:	php-devel >= 3:5.2.0
 Epoch:		2
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -24,7 +24,7 @@ cases, the standard filesystem functions are more than adequate.
 
 %prep
 
-%setup -q -n dio-%{version}RC4
+%setup -q -n dio-%{version}
 [ "../package*.xml" != "/" ] && mv ../package*.xml .
 
 %build
