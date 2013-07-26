@@ -5,8 +5,8 @@
 
 Summary:	Direct I/O extension module for PHP
 Name:		php-%{modname}
-Version:	0.0.6
-Release:	%mkrel 1
+Version:	0.0.7
+Release:	1
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/dio
@@ -196,4 +196,5 @@ rm -rf %{buildroot}
 * Thu May 03 2007 Oden Eriksson <oeriksson@mandriva.com> 1:0.1-13mdv2008.0
 + Revision: 21021
 - rebuilt against new upstream version (5.2.2)
+
 
