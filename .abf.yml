@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   dio-0.0.9.tgz: 70957d4de058caf7c11fb2a6ab517256fa88e843
+sources:
+  dio-0.1.0.tgz: 30c6374de6c88178932f345190c2fbdea91a6ad0
