@@ -9,7 +9,7 @@ Version:	0.1.0
 Release:	1
 Group:		Development/PHP
 License:	PHP License
-URL:		http://pecl.php.net/package/dio
+URL:		https://pecl.php.net/package/dio
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
 BuildRequires:	php-devel >= 3:5.2.0
 Epoch:		2
